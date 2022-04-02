@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from AppCoder.views import recuperar_curso, curso, probandotemplate, profesor
+from AppCoder.views import recuperar_curso, curso, probandotemplate, profesor, recuperar_familia
 from AppCoder.views import recuperar_profesor
+from AppCoder.views import agregafamiliar
+
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
@@ -25,6 +27,8 @@ urlpatterns = [
     #path('profesor/<nombre>/<apellido>/<email>/<profesion>', profesor),
     #path('consulta/', recuperar_profesor),
     path('recupera_curso/', recuperar_curso),
+    path('recupera_familia/', recuperar_familia),
     #path('template/', probandotemplate),
     path('AppCoder/',include("AppCoder.urls")),
+    path('familia/<nombre>/<apellido>/<dni>/<fecha_nacimiento>', agregafamiliar),
 ]

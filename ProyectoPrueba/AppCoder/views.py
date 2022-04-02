@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import Context, Template
 from django.template import loader
-from .models import Curso, Profesor
+from .models import Curso, Familia, Profesor
 from AppCoder.models import Profesor
 
 # Create your views here.
@@ -53,3 +53,14 @@ def entregables(request):
 def inicio(request):
     return render(request,"appcoder/inicio.html")
  
+#agregar familiares
+def agregafamiliar(request,nombre,apellido, dni,fecha_nacimiento):
+    familiar=Familia(nombre=nombre,apellido=apellido,dni=dni,fecha_nacimiento=fecha_nacimiento)
+    familiar.save()
+    return HttpResponse(f"se agrego el familiar {familiar.nombre} , {familiar.apellido}")
+
+def recuperar_familia(request):
+    familia=Familia.objects.all()
+ 
+    #contexto= Context({"p":profe})
+    return render(request,"template_familia.html",{"familia":familia})
