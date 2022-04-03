@@ -22,7 +22,7 @@ from AppCoder.views import agregafamiliar
 
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     #path('agrega/<nombre>/<camada>', curso),
     #path('profesor/<nombre>/<apellido>/<email>/<profesion>', profesor),
     #path('consulta/', recuperar_profesor),

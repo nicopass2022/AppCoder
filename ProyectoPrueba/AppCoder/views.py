@@ -45,13 +45,14 @@ def profesores(request):
     #return HttpResponse("vista de profesores")
 
 def estudiantes(request):
-    return render(request,"appcoder/estudiantes.html")
+    return render(request,"AppCoder/estudiantes.html")
 
 def entregables(request):
     return render(request,"appcoder/entregables.html")
 
 def inicio(request):
-    return render(request,"appcoder/inicio.html")
+    #return render(request,"appcoder/inicio.html")
+    return render(request,"AppCoder/padre.html")
  
 #agregar familiares
 def agregafamiliar(request,nombre,apellido, dni,fecha_nacimiento):
